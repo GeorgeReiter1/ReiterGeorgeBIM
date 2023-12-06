@@ -1,14 +1,9 @@
 def count_letters(text_str):
-    new_list = text_str.lower() #тот же текст в нижнем регистре
-    correct_list = list()   #лист для заполнения
-    for letter in new_list:
-        if letter.isalpha():
-            correct_list.append(letter) #добавлям буквы в список для заполнения
+    needed_dictionary = {} # Сразу создаем словарь для подсчета букв
 
-    needed_dictionary = {} #словарь для заполнения
-    for letter in correct_list: #рассматриваем все буквы из нового списка
-        if letter not in needed_dictionary: #добавляем пары, если их ещё нет
-            needed_dictionary[letter] = correct_list.count(letter)
+    for letter in text_str.lower():
+        if letter.isalpha():
+            needed_dictionary[letter] = needed_dictionary.get(letter, 0) + 1
 
     return needed_dictionary
 
