@@ -1,7 +1,8 @@
-def search_of_index (list_, item):
-    for object in list_:
+def search_of_index(list_, item):
+    for i, object in enumerate(list_):
         if object == item:
-            return list_.index(object)
+            return i
+
 
 items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
 
